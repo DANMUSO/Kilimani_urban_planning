@@ -1,0 +1,39 @@
+services:
+  kiprotech:
+    container_name: kilimani_urban_planning
+    build: .
+    volumes:
+      - ./kilimani_urban_planning:/var/www/html
+    ports:
+      - 9802:80
+    networks:
+      - kiprotechnet
+
+  mysqldbkiprotech:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: kiprotechdb
+    restart: unless-stopped
+    ports:
+      - 3381:3306
+    networks:
+      - kiprotechnet
+    volumes:
+      - mysqldatakiprotech:/var/lib/mysql
+
+  phpmyadminkiprotech:
+    image: phpmyadmin:latest
+    ports:
+      - 9082:80
+    environment:
+      - PMA_ARBITRARY=1
+    networks:
+      - kiprotechnet
+
+networks:
+  kiprotechnet:
+    driver: bridge
+
+volumes:
+  mysqldatakiprotech:
