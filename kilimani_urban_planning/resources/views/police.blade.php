@@ -114,6 +114,9 @@
                 <img src="{{ asset('images/logo.png') }}" alt="Logo">
                 <h3>Lenana Team</h3>
             </div>
+            <div class="menu-logo">
+                <img src="{{ asset('images/qr.png') }}" alt="Logo">
+            </div>
             <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
             <div class="menu-items">
                 <a href="{{url('/')}}" class="menu-item">Roads</a>
