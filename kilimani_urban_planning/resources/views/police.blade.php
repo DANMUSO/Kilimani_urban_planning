@@ -35,32 +35,99 @@
             margin: 0 20px 0 0;
             flex-shrink: 0;
         }
-        .menu {
+        .menu-container {
+            position: relative;
+        }
+        .main-menu {
             display: flex;
-            flex-grow: 1;
-            justify-content: space-around;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f19f39;
+            padding: 10px;
+            flex-wrap: wrap;
         }
-        .menu a {
+        .menu-logo {
+            display: flex;
+            align-items: center;
+        }
+        .menu-logo img {
+            height: 80px; /* Adjust as needed */
+            margin-right: 10px;
+        }
+        .menu-logo h3 {
             color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
+            margin: 0;
         }
-        .menu a:hover {
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            color: white;
+            background-color: #333;
+            border: none;
+            cursor: pointer;
+        }
+        .menu-toggle:hover {
             background-color: #10a04a;
+        }
+        .menu-items {
+            display: flex;
+            gap: 20px;
+        }
+        .menu-items a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+        .menu-items a:hover {
+            background-color: #10a04a;
+        }
+        @media (max-width: 600px) {
+            .menu-toggle {
+                display: block;
+            }
+            .menu-items {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #333;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                z-index: 1000;
+            }
+            .menu-items.show {
+                display: flex;
+            }
+            .menu-items a {
+                padding: 15px;
+                width: 100%;
+                text-align: center;
+                box-sizing: border-box;
+            }
         }
     </style>
 </head>
 <body>
-<div class="header">
-        <img src="{{asset('images/logo.png')}}" alt="Logo">
-        <h3>Lenana Team</h3>
-        <div class="menu">
-        <a href="{{url('/')}}">Roads</a>
-            <a href="{{url('security')}}">Security</a>
-            <a href="{{url('upcomingprojects')}}">Participate</a>
-        </div>
+<div class="menu-container">
+        <nav class="main-menu">
+            <div class="menu-logo">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo">
+                <h3>Lenana Team</h3>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+            <div class="menu-items">
+                <a href="{{url('/')}}" class="menu-item">Roads</a>
+                <a href="{{url('security')}}" class="menu-item">Security</a>
+                <a href="{{url('upcomingprojects')}}" class="menu-item">Participate</a>
+            </div>
+        </nav>
     </div>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.menu-items').classList.toggle('show');
+        });
+    </script>
     <div id="map"></div>
     <div id="nearest-police-station"></div>
 
