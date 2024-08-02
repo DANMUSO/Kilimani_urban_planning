@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <!-- Google Maps JavaScript API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPcXmbNTlOL6p0YwNIpfkZM9xxMn6Vex0"></script>
 
@@ -21,48 +21,77 @@
             margin: 0;
             padding: 0;
         }
-        .card-img-top {
-            height: 200px;
-            object-fit: cover;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
         }
         .card {
-            height: 100%;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .card-header {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .card-content {
+            font-size: 1em;
+        }
+        .color-box {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border-radius: 50%;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .header {
             display: flex;
-            flex-direction: column;
-        }
-        .card-body {
-            flex: 1;
-        }
-        .card-footer {
-            background: white;
-            border-top: none;
-        }
-        .navbar-brand img {
-            height: 50px;
-            width: auto;
-        }
-        .navbar {
+            align-items: center;
             background-color: #f19f39;
+           
         }
-        .navbar-nav .nav-link {
+        .header img {
+            height: 80px;
+            width: auto;
+            margin-right: 20px;
+        }
+        .header h3 {
             color: white;
+            margin: 0 20px 0 0;
+            flex-shrink: 0;
         }
-        .navbar-nav .nav-link:hover {
+        .menu {
+            display: flex;
+            flex-grow: 1;
+            justify-content: space-around;
+        }
+        .menu a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .menu a:hover {
             background-color: #10a04a;
-            color: white;
         }
     </style>
 </head>
 <body>
 <div class="header">
-        <img src="{{asset('images/logo.png')}}" alt="Logo">
-        <h3>Lenana Team</h3>
-        <div class="menu">
+    <img src="{{asset('images/logo.png')}}" alt="Logo">
+    <h3>Lenana Team</h3>
+    <div class="menu">
         <a href="{{url('/')}}">Roads</a>
-            <a href="{{url('security')}}">Security</a>
-            <a href="{{url('upcomingprojects')}}">Participate</a>
-        </div>
+        <a href="{{url('security')}}">Security</a>
+        <a href="{{url('upcomingprojects')}}">Participate</a>
     </div>
+</div>
 <div id="map"></div>
 
 <!-- Button trigger modal -->
