@@ -56,14 +56,14 @@
 </head>
 <body>
 <div class="header">
-    <img src="{{asset('images/logo.png')}}" alt="Logo">
-    <h3>Lenana Team</h3>
-    <div class="menu">
+        <img src="{{asset('images/logo.png')}}" alt="Logo">
+        <h3>Lenana Team</h3>
+        <div class="menu">
         <a href="{{url('/')}}">Roads</a>
-        <a href="{{url('security')}}">Security</a>
-        <a href="{{url('upcomingprojects')}}">Participate</a>
+            <a href="{{url('security')}}">Security</a>
+            <a href="{{url('upcomingprojects')}}">Participate</a>
+        </div>
     </div>
-</div>
 <div class="container mt-5">
     <center><h3 class="mb-4">Upcoming Projects</h3></center>
     <div class="row" id="plans-container">

@@ -54,7 +54,7 @@
             display: flex;
             align-items: center;
             background-color: #f19f39;
-           
+            padding: 10px 20px;
         }
         .header img {
             height: 80px;
@@ -84,14 +84,14 @@
 </head>
 <body>
 <div class="header">
-    <img src="{{asset('images/logo.png')}}" alt="Logo">
-    <h3>Lenana Team</h3>
-    <div class="menu">
+        <img src="{{asset('images/logo.png')}}" alt="Logo">
+        <h3>Lenana Team</h3>
+        <div class="menu">
         <a href="{{url('/')}}">Roads</a>
-        <a href="{{url('security')}}">Security</a>
-        <a href="{{url('upcomingprojects')}}">Participate</a>
+            <a href="{{url('security')}}">Security</a>
+            <a href="{{url('upcomingprojects')}}">Participate</a>
+        </div>
     </div>
-</div>
 <div id="map"></div>
 
 <!-- Button trigger modal -->
