@@ -3,95 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urban Planning Insights</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!-- Google Maps JavaScript API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPcXmbNTlOL6p0YwNIpfkZM9xxMn6Vex0"></script>
-
+    <title>Local Physical Development Plans in Kilimani, Nairobi</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        #map {
-            height: 500px; /* Set a specific height for the map */
-            width: 100%; /* Set width to 100% */
-        }
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
         }
         .card {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .card-header {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-        .card-content {
-            font-size: 1em;
-        }
-        .color-box {
-            width: 20px;
-            height: 20px;
-            display: inline-block;
-            border-radius: 50%;
-            margin-right: 10px;
-            vertical-align: middle;
-        }
-        .header {
+            height: 100%;
             display: flex;
-            align-items: center;
-            background-color: #f19f39;
-            padding: 10px 20px;
+            flex-direction: column;
         }
-        .header img {
-            height: 80px;
+        .card-body {
+            flex: 1;
+        }
+        .card-footer {
+            background: white;
+            border-top: none;
+        }
+        .navbar-brand img {
+            height: 50px;
             width: auto;
-            margin-right: 20px;
         }
-        .header h3 {
+        .navbar {
+            background-color: #f19f39;
+        }
+        .navbar-nav .nav-link {
             color: white;
-            margin: 0 20px 0 0;
-            flex-shrink: 0;
         }
-        .menu {
-            display: flex;
-            flex-grow: 1;
-            justify-content: space-around;
-        }
-        .menu a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
-        }
-        .menu a:hover {
+        .navbar-nav .nav-link:hover {
             background-color: #10a04a;
+            color: white;
         }
     </style>
 </head>
 <body>
-<div class="header">
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">
         <img src="{{asset('images/logo.png')}}" alt="Logo">
-        <h3>Lenana Team</h3>
-        <div class="menu">
-        <a href="{{url('/')}}">Roads</a>
-            <a href="{{url('security')}}">Security</a>
-            <a href="{{url('upcomingprojects')}}">Participate</a>
-        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/')}}">Roads</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('security')}}">Security</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('upcomingprojects')}}">Participate</a>
+            </li>
+        </ul>
     </div>
+</nav>
 <div id="map"></div>
 
 <!-- Button trigger modal -->
