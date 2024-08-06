@@ -44,7 +44,7 @@
         }
     </style>
     <!-- Load Google Maps and Google Maps Visualization libraries -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPcXmbNTlOL6p0YwNIpfkZM9xxMn6Vex0&libraries=places,visualization"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=APIKEY&libraries=places,visualization"></script>
 </head>
 <body>
 <div class="header">

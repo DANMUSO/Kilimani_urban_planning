@@ -289,7 +289,7 @@
         }
 
         // Replace with your actual Google Maps API key
-        var apiKey = "AIzaSyDPcXmbNTlOL6p0YwNIpfkZM9xxMn6Vex0"; // Fetch API key from Laravel config
+        var apiKey = ""; // Fetch API key from Laravel config
 
         // Load Google Maps API and then initialize the map
         loadScript(`https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places&callback=initMap`, function() {

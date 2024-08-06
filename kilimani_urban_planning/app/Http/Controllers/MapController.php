@@ -30,7 +30,7 @@ class MapController extends Controller
         $radius = 1000; // 100 kilometers in meters
 
         $client = new Client();
-        $apiKey = 'AIzaSyDPcXmbNTlOL6p0YwNIpfkZM9xxMn6Vex0';
+        $apiKey = '';
         
         // Fetch amenities using Places API
         $placesResponse = $client->get("https://maps.googleapis.com/maps/api/place/nearbysearch/json", [
